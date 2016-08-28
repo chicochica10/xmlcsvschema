@@ -1,0 +1,251 @@
+<Tables>
+    <Table Name="Farmatic_Compras" Schema="dbo">
+        <columns>
+            <Column Name="pharmacy_code" DataType="varchar" Length="10" IsNullable="NO" />
+            <Column Name="Tipo_registro" DataType="varchar" Length="50" IsNullable="NO" />
+            <Column Name="Fecha_recepcion" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="Hora" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="tipo_de_movimiento" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="Numero_de_pedido" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="Linea_transaccion_de_compra" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="Proveedor" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="Codigo_articulo" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="EAN_articulo" DataType="varchar" Length="50" IsNullable="YES">
+                <constraints>
+                    <Constraint Name="UNIQUE" VALUE="" />
+                </constraints>
+            </Column>
+            <Column Name="Descripcion" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="Unidades" DataType="int" IsNullable="YES">
+                <constraints>
+                    <Constraint Name="CHECK" VALUE="([Unidades]&gt;(0))" />
+                    <Constraint Name="CHECK" VALUE="([Unidades]&lt;[Stock])" />
+                </constraints>
+            </Column>
+            <Column Name="Stock" DataType="int" IsNullable="YES">
+                <constraints>
+                    <Constraint Name="CHECK" VALUE="([Unidades]&lt;[Stock])" />
+                    <Constraint Name="CHECK" VALUE="([Stock]&gt;(0))" />
+                </constraints>
+            </Column>
+        </columns>
+    </Table>
+    <Table Name="Farmatic_Ventas" Schema="dbo">
+        <columns>
+            <Column Name="pharmacyCode" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="recordType" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="dispensationCode" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="units" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="stock" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="minStock" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="maxStock" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="pvpCard" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="productdesc" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="pvpSell" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="eanCode" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="date" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="time" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="transaction" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="transactionLine" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="prescription" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="prescriptionCod" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="preccripionEan" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="prescriptionDesc" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="prescriptionPa" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="lineDiscount" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="lineAport" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="entityAport" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="entityType" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="entityName" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="aportPercent" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="promotionType" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="promotionId" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="promotionDesc" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="footDiscount" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="fidelitation" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="internetSale" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="crossNatCode" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="crossEanCode" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="fidelitationCode" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="pointsGeneration" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="pointsConsumption" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="valeGeneration" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="valeConsumption" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="euroGeneration" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="euroConsumption" DataType="varchar" Length="50" IsNullable="YES" />
+        </columns>
+    </Table>
+    <Table Name="Farmatic_Ventas_old" Schema="dbo">
+        <columns>
+            <Column Name="pharmacyCode" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="recordType" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="dispensationCode" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="units" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="stock" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="minStock" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="maxStock" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="pvpCard" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="productdesc" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="pvpSell" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="eanCode" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="date" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="time" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="transaction" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="transactionLine" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="prescription" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="prescriptionCod" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="preccripionEan" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="prescriptionDesc" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="prescriptionPa" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="lineDiscount" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="lineAport" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="entityAport" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="entityType" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="entityName" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="aportPercent" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="promotionType" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="promotionId" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="promotionDesc" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="footDiscount" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="fidelitation" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="internetSale" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="crossNatCode" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="crossEanCode" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="fidelitationCode" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="pointsGeneration" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="pointsConsumption" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="valeGeneration" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="valeConsumption" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="euroGeneration" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="euroConsumption" DataType="varchar" Length="50" IsNullable="YES" />
+        </columns>
+    </Table>
+    <Table Name="newtable" Schema="dbo">
+        <columns>
+            <Column Name="fieldA" DataType="nchar" Length="10" IsNullable="YES" />
+        </columns>
+    </Table>
+    <Table Name="ph2b" Schema="dbo">
+        <columns>
+            <Column Name="CANTIDAD" DataType="bigint" IsNullable="NO">
+                <constraints>
+                    <Constraint Name="CHECK" VALUE="([CANTIDAD]&gt;(0))" />
+                </constraints>
+            </Column>
+            <Column Name="CDG MEDICO" DataType="varchar" Length="20" IsNullable="NO" />
+            <Column Name="COD FAR" DataType="varchar" Length="20" IsNullable="NO" />
+            <Column Name="CODIGO PROD" DataType="varchar" Length="20" IsNullable="NO" />
+            <Column Name="DESC PROD" DataType="varchar" Length="100" IsNullable="NO" />
+            <Column Name="FECHA" DataType="varchar" Length="20" IsNullable="NO">
+                <constraints>
+                    <Constraint Name="CHECK" VALUE="([FECHA]&gt;='January 1, 1970' AND [FECHA]&lt;=getdate())" />
+                </constraints>
+            </Column>
+            <Column Name="MED ESPEC" DataType="varchar" Length="50" IsNullable="NO" />
+            <Column Name="MEDICO FINAL" DataType="varchar" Length="100" IsNullable="NO" />
+            <Column Name="NOMLABO" DataType="varchar" Length="50" IsNullable="NO" />
+            <Column Name="TICKET" DataType="bigint" IsNullable="NO">
+                <constraints>
+                    <Constraint Name="PRIMARY KEY" VALUE="" />
+                    <Constraint Name="CHECK" VALUE="([TICKET]&gt;(0))" />
+                </constraints>
+            </Column>
+        </columns>
+    </Table>
+    <Table Name="testtable" Schema="dbo">
+        <columns>
+            <Column Name="fieldA" DataType="nvarchar" Length="50" IsNullable="YES" />
+            <Column Name="fieldB" DataType="nvarchar" Length="50" IsNullable="NO" />
+        </columns>
+    </Table>
+    <Table Name="V0010016" Schema="dbo">
+        <columns>
+            <Column Name="pharmacyCode" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="recordType" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="dispensationCode" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="units" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="stock" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="minStock" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="maxStock" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="pvpCard" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="productdesc" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="pvpSell" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="eanCode" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="date" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="time" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="transaction" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="transactionLine" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="prescription" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="prescriptionCod" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="preccripionEan" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="prescriptionDesc" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="prescriptionPa" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="lineDiscount" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="lineAport" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="entityAport" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="entityType" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="entityName" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="aportPercent" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="promotionType" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="promotionId" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="promotionDesc" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="footDiscount" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="fidelitation" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="internetSale" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="crossNatCode" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="crossEanCode" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="fidelitationCode" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="pointsGeneration" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="pointsConsumption" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="valeGeneration" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="valeConsumption" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="euroGeneration" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="euroConsumption" DataType="varchar" Length="50" IsNullable="YES" />
+        </columns>
+    </Table>
+    <Table Name="V0022916" Schema="dbo">
+        <columns>
+            <Column Name="pharmacyCode" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="recordType" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="dispensationCode" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="units" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="stock" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="minStock" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="maxStock" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="pvpCard" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="productdesc" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="pvpSell" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="eanCode" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="date" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="time" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="transaction" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="transactionLine" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="prescription" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="prescriptionCod" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="preccripionEan" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="prescriptionDesc" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="prescriptionPa" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="lineDiscount" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="lineAport" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="entityAport" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="entityType" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="entityName" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="aportPercent" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="promotionType" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="promotionId" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="promotionDesc" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="footDiscount" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="fidelitation" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="internetSale" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="crossNatCode" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="crossEanCode" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="fidelitationCode" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="pointsGeneration" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="pointsConsumption" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="valeGeneration" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="valeConsumption" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="euroGeneration" DataType="varchar" Length="50" IsNullable="YES" />
+            <Column Name="euroConsumption" DataType="varchar" Length="50" IsNullable="YES" />
+        </columns>
+    </Table>
+</Tables>
